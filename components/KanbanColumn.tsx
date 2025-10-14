@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Asset } from '../types';
 import AssetCard from './AssetCard';
@@ -12,7 +11,7 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({ title, assets }) => {
   const isBuyZone = title.includes('BUY ZONE');
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 w-[85vw] md:w-[40vw] lg:w-auto flex-shrink-0 snap-start">
       <div className="px-2">
         <h2
           className={`text-sm font-bold tracking-widest uppercase pb-2 border-b-2 

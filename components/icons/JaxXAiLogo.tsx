@@ -1,9 +1,8 @@
-
 import React from 'react';
 
-export const JaxXAiLogo: React.FC = () => (
+export const JaxXAiLogo: React.FC<{className?: string}> = ({ className }) => (
   <div className="flex items-center">
-    <svg width="100" height="32" viewBox="0 0 100 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 100 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <defs>
         <linearGradient id="logo-gradient" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#00BFFF" />

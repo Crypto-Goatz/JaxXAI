@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { JaxXAiLogo } from './icons/JaxXAiLogo';
 import { BlueLightFilterIcon } from './icons/BlueLightFilterIcon';
@@ -8,7 +7,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="w-full flex justify-between items-center">
-      <JaxXAiLogo />
+      <JaxXAiLogo className="h-8 w-auto" />
       <div className="flex items-center gap-4 md:gap-6">
         <div className="flex items-center gap-2 bg-lime-green/10 border border-lime-green/50 rounded-md px-3 py-1 text-xs md:text-sm shadow-glow-green">
           <span className="relative flex h-2 w-2">
