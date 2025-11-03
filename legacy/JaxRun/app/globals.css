@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Shifted to black and dark gray color palette with radial gradients */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 83%;
+    --radius: 0.75rem;
+    --sidebar: 0 0% 8%;
+    --sidebar-foreground: 0 0% 70%;
+    --brand: 0 0% 98%;
+  }
+
+  .dark {
+    /* Dark mode now uses same black/gray palette */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 83%;
+    --sidebar: 0 0% 8%;
+    --sidebar-foreground: 0 0% 70%;
+    --brand: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Enhanced React Flow styles with realistic shadows and smooth transitions */
+.react-flow__node {
+  font-family: inherit;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.react-flow__node:hover {
+  filter: brightness(1.02);
+}
+
+.react-flow__edge {
+  stroke-width: 2;
+  transition: stroke-width 0.2s ease;
+}
+
+.react-flow__edge:hover {
+  stroke-width: 3;
+}
+
+.react-flow__handle {
+  border: 2px solid hsl(var(--background));
+  background: hsl(var(--muted-foreground));
+  width: 10px;
+  height: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.3);
+  background: hsl(var(--primary));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow__handle.react-flow__handle-top {
+  top: -5px;
+}
+
+.react-flow__handle.react-flow__handle-bottom {
+  bottom: -5px;
+}
+
+.react-flow__handle.react-flow__handle-left {
+  left: -5px;
+}
+
+.react-flow__handle.react-flow__handle-right {
+  right: -5px;
+}
+
+/* Custom utility classes for hyper-realistic shadows */
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow-soft-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-soft-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-soft-xl {
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow-inner-soft {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Enhanced radial gradient shadows for depth */
+  .shadow-radial {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 2px 4px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .shadow-radial-md {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 4px 8px rgba(0, 0, 0, 0.35), 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .shadow-radial-lg {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 8px 16px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  .shadow-radial-xl {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 12px 24px rgba(0, 0, 0, 0.45), 0 32px 64px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Updated glow effects for black/gray theme */
+  .glow-green {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.2), 0 0 40px rgba(34, 197, 94, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05), 0
+      4px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .glow-green-hover:hover {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.3), 0 0 60px rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2), 0 0 40px rgba(245, 158, 11, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 4px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .glow-yellow-hover:hover {
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.3), 0 0 60px rgba(245, 158, 11, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2), 0 0 40px rgba(59, 130, 246, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 4px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .glow-blue-hover:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.2), 0 0 40px rgba(168, 85, 247, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 4px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .glow-purple-hover:hover {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.2), 0 0 40px rgba(239, 68, 68, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05), 0
+      4px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .glow-red-hover:hover {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.3), 0 0 60px rgba(239, 68, 68, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2), 0 0 40px rgba(6, 182, 212, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05), 0
+      4px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .glow-cyan-hover:hover {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.3), 0 0 60px rgba(6, 182, 212, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.2), 0 0 40px rgba(249, 115, 22, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 4px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .glow-orange-hover:hover {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.3), 0 0 60px rgba(249, 115, 22, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 255, 255, 0.05), 0 0 0 1px
+      rgba(255, 255, 255, 0.05), 0 4px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .glow-primary-hover:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15), 0 0 60px rgba(255, 255, 255, 0.08), 0 0 0 1px
+      rgba(255, 255, 255, 0.08), 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+}

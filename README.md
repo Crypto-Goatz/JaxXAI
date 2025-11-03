@@ -1,20 +1,51 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# JaxXAI Frontend Workspace
 
-# Run and deploy your AI Studio app
+This repository contains the active trading dashboard built with Vite + React 19, alongside the **JaxEngine** core and its bundled **JaxBot** module. The top-level app is the lightweight client you can ship quickly, while the Next.js-powered JaxEngine manages deeper automation flows and authenticated dashboards.
 
-This contains everything you need to run your app locally.
+## Repository Layout
 
-View your app in AI Studio: https://ai.studio/apps/drive/1TprwUC7f2aWpwI4uIIaAztGuwOvf_BdA
+- `/` – Vite application published as `jaxxai-crypto-dashboard` (see `package.json` for scripts).
+- `/JaxEngine` – full Next.js core that powers enterprise dashboards, APIs, and internal tools.
+  - `/JaxEngine/modules/jaxbot` – standalone JaxBot strategy console that runs inside the engine.
+- `/legacy` – archived experiments and historical prototypes kept for reference only.
+- `/services`, `/api`, `requirements.txt` – utility scripts and service connectors that support the broader stack.
 
-## Run Locally
+## Run the Vite Dashboard (root app)
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+Build for production with `npm run build`; output is written to `dist/`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Work Inside JaxEngine
+
+The engine is a standard Next.js 14 project with Tailwind and Firebase integrations.
+
+```bash
+cd JaxEngine
+pnpm install   # or npm install
+pnpm dev       # runs the Next.js dev server
+```
+
+Environment variables are loaded from `.env.local`; see `JaxEngine/next_steps.txt` for the full list of required services.
+
+### Launch JaxBot From the Engine
+
+JaxBot now lives under `JaxEngine/modules/jaxbot` so it can share credentials, UI tokens, and build tooling with the core.
+
+```bash
+cd JaxEngine/modules/jaxbot
+pnpm install
+pnpm dev
+```
+
+Keep the `modules` directory structure if you add more specialised consoles in the future.
+
+## Contributing
+
+1. Make changes in a feature branch.
+2. Run the relevant build (`npm run build` at the root or `pnpm build` within subprojects).
+3. Verify lint/tests where available.
+4. Open a pull request summarising the affected app(s).
