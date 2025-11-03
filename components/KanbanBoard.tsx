@@ -4,7 +4,7 @@ import { mockStages } from '../services/mockData';
 import { fetchLiveStages } from '../services/livePricing';
 import type { StageData } from '../types';
 
-const REFRESH_INTERVAL_MS = 30_000;
+const REFRESH_INTERVAL_MS = 300_000;
 
 const KanbanBoard: React.FC = () => {
   const [stages, setStages] = useState<StageData[]>(mockStages);

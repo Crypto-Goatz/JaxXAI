@@ -6,7 +6,9 @@ This repository contains the active trading dashboard built with Vite + React 19
 
 - `/` – Vite application published as `jaxxai-crypto-dashboard` (see `package.json` for scripts).
 - `/JaxEngine` – full Next.js core that powers enterprise dashboards, APIs, and internal tools.
-  - `/JaxEngine/modules/jaxbot` – standalone JaxBot strategy console that runs inside the engine.
+  - `/JaxEngine/modules/jaxbot` – JaxBot strategy console (Next.js module).
+  - `/JaxEngine/modules/apex-mods` – Apex automation workspace.
+  - `/JaxEngine/modules/jax-okx` – OKX trading assistant (Vite module).
 - `/services`, `/api`, `requirements.txt` – utility scripts and service connectors that support the broader stack.
 
 ## Run the Vite Dashboard (root app)
@@ -18,7 +20,7 @@ npm run dev
 
 Build for production with `npm run build`; output is written to `dist/`.
 
-Copy `.env.example` to `.env.local` (and `JaxEngine/.env.example` to `JaxEngine/.env.local`) before running locally, then fill in live credentials.
+Copy `.env.example` to `.env.local` (and `JaxEngine/.env.example` to `JaxEngine/.env.local`) before running locally, then fill in live credentials. Any variable prefixed with `VITE_` is exposed to the Vite client bundle—use those for read-only pricing feeds such as `VITE_JAXDEX_DATA_ENDPOINT`.
 
 ### Deploy to Firebase Hosting
 
@@ -47,7 +49,7 @@ Auth Domain:     jaxengine.firebaseapp.com
 Project ID:      jaxengine
 Storage Bucket:  jaxengine.firebasestorage.app
 App ID:          1:442431325644:web:7fb18bb27b9ea9ecf4c969
-Measurement ID:  G-PYEE8KRWCQ
+Measurement ID:  G-YG0CC084GL
 ```
 Ensure the JaxEngine sub-project keeps these values aligned (`JaxEngine/.env.local`) and mirror them in any deployment platform (e.g. Vercel).
 
@@ -84,6 +86,10 @@ pnpm dev
 ```
 
 Keep the `modules` directory structure if you add more specialised consoles in the future.
+
+### Secret Manager
+
+Set `ADMIN_SECRET_KEY` and `SECRET_MANAGER_KEY` in both local and hosted environments to unlock the dashboard secret manager. Visit **Dashboard → Settings → API Keys** inside JaxEngine to store exchange credentials; secrets are encrypted server-side and only revealed to admins who supply the correct key. Use the copy action to pull a credential into the clipboard when you need to configure downstream services.
 
 ## Contributing
 
