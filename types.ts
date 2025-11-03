@@ -14,3 +14,9 @@ export interface StageData {
   title: string;
   assets: Asset[];
 }
+
+export interface HeliusWallet {
+  address: string;
+  alias: string;
+  persona: string;
+}

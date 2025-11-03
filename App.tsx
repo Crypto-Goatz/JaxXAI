@@ -1,9 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import KanbanBoard from './components/KanbanBoard';
+import MemeWhaleWatch from './components/MemeWhaleWatch';
 
 const App: React.FC = () => {
+  const [activePage, setActivePage] = useState<'dashboard' | 'whale-watch'>('dashboard');
+
   return (
     <div className="relative min-h-screen w-full flex flex-col p-4 md:p-6 lg:p-8">
       {/* Background Grid and Glow Effect */}
@@ -19,9 +22,9 @@ const App: React.FC = () => {
         }}
       ></div>
 
-      <Header />
+      <Header activePage={activePage} onNavigate={setActivePage} />
       <main className="flex-grow mt-6">
-        <KanbanBoard />
+        {activePage === 'dashboard' ? <KanbanBoard /> : <MemeWhaleWatch />}
       </main>
     </div>
   );
