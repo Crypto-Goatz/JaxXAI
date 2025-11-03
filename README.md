@@ -18,6 +18,8 @@ npm run dev
 
 Build for production with `npm run build`; output is written to `dist/`.
 
+Copy `.env.example` to `.env.local` (and `JaxEngine/.env.example` to `JaxEngine/.env.local`) before running locally, then fill in live credentials.
+
 ### Deploy to Firebase Hosting
 
 Firebase Hosting is pre-configured to use the `jaxengine` project:
@@ -48,6 +50,16 @@ App ID:          1:442431325644:web:7fb18bb27b9ea9ecf4c969
 Measurement ID:  G-PYEE8KRWCQ
 ```
 Ensure the JaxEngine sub-project keeps these values aligned (`JaxEngine/.env.local`) and mirror them in any deployment platform (e.g. Vercel).
+
+### GitHub Actions Deployment
+
+A workflow at `.github/workflows/firebase-hosting.yml` builds the Vite app and deploys to Firebase Hosting on every push to `main`. Populate these repository secrets before enabling it:
+
+- `FIREBASE_TOKEN` (from `firebase login:ci`)
+- `NEXT_PUBLIC_FIREBASE_*` variables listed above
+- External service keys (`JAXDEX_API_KEYS`, `JAXAI_FILTERS_API_KEY`, Stripe keys, etc.)
+
+Once the secrets exist, pushes to `main` will trigger an automated deploy. You can also run it manually via the “Deploy to Firebase Hosting” workflow dispatch.
 
 ## Work Inside JaxEngine
 
