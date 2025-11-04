@@ -1,0 +1,5 @@
+{
+  "name": "AlphaHunter AI Trading Bot",
+  "description": "A sleek, powerful dashboard for the AlphaHunter AI trading bot, designed to track smart money in the memecoin market and execute trades on OKX. This interface provides real-time bot control, trade history, backtest analysis, and secure API key management.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JaxXAI Crypto Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'rajdhani': ['Rajdhani', 'sans-serif'],
+            },
+            colors: {
+              'slate-purple': {
+                'dark': '#201F24',
+                'medium': '#312F3B',
+              },
+              'electric-blue': '#00BFFF',
+              'lime-green': '#9FFF33',
+              'lavender-gray': '#D0CDE1',
+              'glow-magenta': '#FF00FF',
+            },
+            boxShadow: {
+              'glow-blue': '0 0 12px rgba(0, 191, 255, 0.5)',
+              'glow-blue-light': '0 0 8px rgba(0, 191, 255, 0.3)',
+              'glow-magenta': '0 0 15px #FF00FF',
+              'glow-green': '0 0 8px #9FFF33',
+            }
+          },
+        },
+      }
+    </script>
+     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/recharts@2.12.7/umd/Recharts.min.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-purple-dark font-rajdhani text-lavender-gray overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

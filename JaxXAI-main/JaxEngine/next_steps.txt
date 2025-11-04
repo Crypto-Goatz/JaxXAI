@@ -1,0 +1,12 @@
+Apps & Experiences
+- Marketing site (`/`): hero, features, contact form, pricing and CTA flow.
+- Dashboard suite (`/dashboard` and subroutes): module-toggled widgets, live signals calculator, scouting, admin tools.
+- Control Room (`/YOLO` & `/YOLO/connect-demo`): Firebase-authenticated trading cockpit with OKX integrations.
+- HeyJax conversational assistant (`/HeyJax`): AI chat and research pipelines.
+- Automation add-ons (`/jaxbot` — module located at `modules/jaxbot`, `/dashboard/alerts`, API endpoints under `/api/*`, including prices, strategies, compliance, voice, vision).
+
+Recommended Next Steps
+1. Configure production environment variables on Vercel for OpenAI, Stripe, Firebase, OKX, LunarCrush, and any new API keys introduced by the merged features.
+2. Remove the unsupported `eslint` flag from `next.config.mjs`, pick a single lockfile strategy, and rerun `npm run build` to ensure a clean CI build.
+3. Push the merged branch, trigger a Vercel preview deployment, and smoke test key routes (`/`, `/dashboard`, `/YOLO`, `/HeyJax`, `/api/prices/live`) with live credentials.
+4. After verification, promote the preview to production and monitor logs for rate-limit or env-var warnings during the first run.

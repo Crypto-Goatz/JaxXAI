@@ -1,0 +1,10 @@
+[
+  {
+    "prompt": "Create a Tier 2 onboarding summary for a new account in Canada.",
+    "expectation": "Summary mentions Tier 2, onboarding tasks, Canada context."
+  },
+  {
+    "prompt": "Suggest safeguards before executing a Solana swap for $5000.",
+    "expectation": "Mentions risk checks such as slippage, wallet balance, approvals."
+  }
+]
